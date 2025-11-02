@@ -63,9 +63,23 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// // WebSocket
-// const wsServer = new WebSocketServer(server);
-// global.wsServer = wsServer;
+const allowedOrigins = [
+ 
+  "http://localhost:3000",
+  "https://ecommerce-frontend-main-9.onrender.com"
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
+
 
 // Error handlers
 app.use('*', notFound);
