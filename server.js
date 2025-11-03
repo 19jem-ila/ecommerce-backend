@@ -34,7 +34,7 @@ connectDB();
 const allowedOrigins = [
  
   "http://localhost:3000",
-  "https://ecommerce-frontend-main-9.onrender.com"
+  "https://minaoptics.onrender.com"
 ];
 
 app.use(cors({
