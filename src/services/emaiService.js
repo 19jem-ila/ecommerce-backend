@@ -90,7 +90,7 @@ export const sendVerificationEmail = async (email, link) => {
     to: email,
     subject: "Verify your email",
     html: `
-      <p>Welcome to Your Shop 👋</p>
+      <p>Welcome to our  Shop 👋</p>
       <p>Click the link below to verify your email:</p>
       <a href="${link}">${link}</a>
     `,
